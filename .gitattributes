@@ -1,0 +1,15 @@
+# Define auto normalization
+* text=auto
+
+# Explicitly declare text files you want to always be normalized and converted to native line endings on checkout.
+*.java      text
+*.kt        text
+*.xml       text
+*.gradle    text
+*.kts       text
+
+# Denote all files that are truly binary and should not be modified.
+*.png       binary
+*.jpg       binary
+*.jar       binary
+*.keystore  binary
