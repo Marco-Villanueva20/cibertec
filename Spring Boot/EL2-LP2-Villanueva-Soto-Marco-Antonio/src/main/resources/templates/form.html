@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Listar</title>
+</head>
+
+<body>
+	<header class="container bg-success text-center text-white p-3">
+		<h1>Registro de Contacto</h1>
+	</header>
+
+	<main class="container mt-4">
+		<div class="row justify-content-center">
+			<div class="col-sm-6 ">
+			<form th:action="@{/save}" th:object=${contacto} method="POST">
+				<div class="card">
+					<div class="card-header">
+						<h3>Modulo Contacto</h3>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<label>Id</label>
+							<input th:field="*{IdContacto}" type="number" class="form-control " readonly>
+						</div>
+						<div class="form-group">
+							<label>Nombre</label>
+							<input th:field="*{Nombre}" type="text" class="form-control" placeholder="Introduzca su nombre">
+						</div>
+						<div class="form-group">
+							<label>Celular</label>
+							<input th:field="*{Celular}"  type="tel" class="form-control" pattern="[9]{1}[0-9]{8}" required placeholder="Introduzca su número telefónico">
+						</div>
+						<div class="form-group">
+							<label>Email</label>
+							<input th:field="*{Email}" type="email" class="form-control" placeholder="Introduzca su correo" name="email">
+						</div>
+						<div class="form-group">
+							<label>F.Nacimiento</label>
+							<input th:field="*{FechaDeNacimiento}" type="date" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>F.Registro</label>
+							<input th:field="*{FechaDeRegistro}" type="datetime-local" class="form-control" >
+						</div>
+					</div>
+					<div class="card-footer">
+						<input type="submit" value="Guardar" class="btn btn-success">
+					</div>
+				</div>
+			</form>
+		</div>
+		</div>
+		
+	</main>
+
+	<footer class="container bg-dark text-end text-white p-3 mt-3">
+		<h3>Redes Sociales</h3>
+	</footer>
+</body>
+
+</html>
