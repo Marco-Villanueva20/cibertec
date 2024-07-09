@@ -1,0 +1,12 @@
+package Interfaz;
+
+import java.util.ArrayList;
+
+import Entidad.Estado;
+
+public interface EstadoInterfaceDAO {
+	
+	public ArrayList<Estado> listar();
+	public Estado obtener (int codigo);
+
+}

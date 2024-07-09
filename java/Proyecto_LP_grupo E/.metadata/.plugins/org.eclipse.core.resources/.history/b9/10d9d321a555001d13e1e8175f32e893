@@ -1,0 +1,93 @@
+package Vista;
+
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
+
+public class MantenimientoProductos extends JInternalFrame {
+	private JButton btnAgregar;
+	private JButton btnEditar;
+	private JButton btnEliminar;
+	private JTable tblProductos;
+	private JScrollPane scrollPane;
+	
+	private FrmPrincipal frmPrincipal;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MantenimientoProductos frame = new MantenimientoProductos();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MantenimientoProductos() {
+		setClosable(true);
+		setTitle("Mantenimiento de productos");
+		setBounds(100, 100, 700, 410);
+		getContentPane().setLayout(null);
+		
+		btnAgregar = new JButton("Agregar");
+		btnAgregar.setBounds(10, 44, 113, 34);
+		getContentPane().add(btnAgregar);
+		
+		btnEditar = new JButton("Editar");
+		btnEditar.setBounds(149, 44, 113, 34);
+		getContentPane().add(btnEditar);
+		
+		btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(289, 44, 113, 34);
+		getContentPane().add(btnEliminar);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 93, 664, 276);
+		getContentPane().add(scrollPane);
+		
+		tblProductos = new JTable();
+		tblProductos.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"C\u00F3digo", "Descripci\u00F3n", "Cantidad", "Precio", "Familia"
+			}
+		));
+		scrollPane.setViewportView(tblProductos);
+
+	}
+
+	void setFrmPrincipal(FrmPrincipal frmPrincipal) {
+		this.frmPrincipal = frmPrincipal;
+		
+	}
+
+}

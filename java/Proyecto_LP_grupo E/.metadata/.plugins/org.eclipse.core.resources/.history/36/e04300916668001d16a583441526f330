@@ -1,0 +1,16 @@
+package Interfaz;
+
+import java.util.ArrayList;
+
+import Entidad.Usuario;
+
+
+public interface UsuariosInterfacesDAO {
+	
+	public int registrar(Usuario u);
+	public int ActualizarUsuario(Usuario u);
+	public int EliminarUsuario(int codigo);
+	public Usuario obtener(int codigo);
+	public ArrayList<Usuario> listarUsuario();
+
+}

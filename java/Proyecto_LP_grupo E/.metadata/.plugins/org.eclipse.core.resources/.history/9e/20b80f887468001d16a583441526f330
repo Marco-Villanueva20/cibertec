@@ -1,0 +1,310 @@
+package Vista;
+
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+
+import Entidad.Estados;
+import Entidad.TipoUsuario;
+import Entidad.Usuarios;
+import Mantenimiento.GestionEstadosDAO;
+import Mantenimiento.GestionTipoUsuarioDAO;
+import Mantenimiento.GestionUsuarios;
+import utils.Alertas;
+import utils.Validaciones;
+
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+
+public class frmEditarUsuario extends JInternalFrame implements ActionListener {
+	private JLabel lblCodigo;
+	private JLabel lblNombreUsuario;
+	private JLabel lblPassword;
+	private JLabel lblTipoUsuario;
+	private JTextField txtNombreUsuario;
+	private JTextField txtPassword;
+	private JComboBox cboTipoUsuario;
+	private JButton btnGuardar;
+	private JButton btnCancelar;
+	private frmMantenimientoProductos frmMantenimientoProductos;
+	private JLabel lblEstado;
+	private JComboBox cboEstado;
+	private Usuarios usuario = new Usuarios();
+	
+	GestionUsuarios gUser = new GestionUsuarios();
+	GestionTipoUsuarioDAO gTipUser = new GestionTipoUsuarioDAO();
+	GestionEstadosDAO gEst = new GestionEstadosDAO();
+	private JTextField txtCodigo;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frmEditarUsuario frame = new frmEditarUsuario();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public frmEditarUsuario() {
+		setTitle("Editar Productos");
+		setBounds(100, 100, 333, 374);
+		getContentPane().setLayout(null);
+		
+		lblCodigo = new JLabel("Código:");
+		lblCodigo.setBounds(10, 29, 46, 14);
+		getContentPane().add(lblCodigo);
+		
+		lblNombreUsuario = new JLabel("Nombre de Usuario");
+		lblNombreUsuario.setBounds(10, 60, 111, 14);
+		getContentPane().add(lblNombreUsuario);
+		
+		lblPassword = new JLabel("Contraseña:");
+		lblPassword.setBounds(10, 91, 72, 14);
+		getContentPane().add(lblPassword);
+		
+		lblTipoUsuario = new JLabel("Tipo de Usuario:");
+		lblTipoUsuario.setBounds(10, 126, 111, 14);
+		getContentPane().add(lblTipoUsuario);
+		
+		txtNombreUsuario = new JTextField();
+		txtNombreUsuario.setColumns(10);
+		txtNombreUsuario.setBounds(110, 57, 180, 20);
+		getContentPane().add(txtNombreUsuario);
+		
+		txtPassword = new JTextField();
+		txtPassword.setColumns(10);
+		txtPassword.setBounds(110, 88, 180, 20);
+		getContentPane().add(txtPassword);
+		
+		cboTipoUsuario = new JComboBox();
+		cboTipoUsuario.setBounds(110, 122, 180, 22);
+		getContentPane().add(cboTipoUsuario);
+		
+		btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(this);
+		btnGuardar.setBounds(53, 274, 111, 39);
+		getContentPane().add(btnGuardar);
+		
+		btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(this);
+		btnCancelar.setBounds(179, 274, 111, 39);
+		getContentPane().add(btnCancelar);
+		
+		lblEstado = new JLabel("Estado:");
+		lblEstado.setBounds(10, 160, 64, 14);
+		getContentPane().add(lblEstado);
+		
+		cboEstado = new JComboBox();
+		cboEstado.setBounds(110, 155, 180, 22);
+		getContentPane().add(cboEstado);
+		
+		txtCodigo = new JTextField();
+		txtCodigo.setEnabled(false);
+		txtCodigo.setEditable(false);
+		txtCodigo.setBounds(110, 26, 180, 20);
+		getContentPane().add(txtCodigo);
+		txtCodigo.setColumns(10);
+		
+		cargarDataComboBoxTipoUsuario();
+		cargarDataComboBoxEstados();
+
+	}
+	
+	private void cargarDataComboBoxTipoUsuario() {
+		ArrayList<TipoUsuario> listaTipoUsuarios = gTipUser.listar();
+
+		TipoUsuario list = new TipoUsuario();
+		list.setDescripcion("Seleccione...");
+		listaTipoUsuarios.add(0, list);
+		cboTipoUsuario.setModel(new DefaultComboBoxModel<TipoUsuario>(listaTipoUsuarios.toArray(new TipoUsuario[0])));
+
+	}
+	
+	private void cargarDataComboBoxEstados() {
+		ArrayList<Estados> listaEstados = gEst.listar();
+
+		Estados list = new Estados();
+		list.setDescripcion("Seleccione...");
+		listaEstados.add(0, list);
+		cboEstado.setModel(new DefaultComboBoxModel<Estados>(listaEstados.toArray(new Estados[0])));
+	}
+	
+	
+	void cargarTipoUsuarioCombo(TipoUsuario tUsuario){
+		TipoUsuario item;
+		for(int i = 0; i < cboTipoUsuario.getItemCount(); i ++){
+			item = (TipoUsuario) cboTipoUsuario.getItemAt(i);
+			if(item.getCodigo() == tUsuario.getCodigo()){
+				cboTipoUsuario.setSelectedIndex(i);
+				break;
+			}
+		}
+	}
+	
+	void cargarEstadosCombo(Estados estados){
+		Estados item;
+		for(int i = 0; i < cboEstado.getItemCount(); i ++){
+			item = (Estados) cboEstado.getItemAt(i);
+			if(item.getCodigo() == estados.getCodigo()){
+				cboEstado.setSelectedIndex(i);
+				break;
+			}
+		}
+	}
+	
+	public void cargar(int codigo) {
+		usuario = gUser.obtener(codigo);
+		
+		txtCodigo.setText(Integer.toString((usuario.getCodigo())));
+		txtNombreUsuario.setText(usuario.getNombre());
+		txtPassword.setText(usuario.getPass());
+		cargarTipoUsuarioCombo(usuario.getTipousuario());
+		cargarEstadosCombo(usuario.getEstado());
+
+		txtNombreUsuario.requestFocus();
+	}
+
+	public void setfrmMantenimientoProductos(frmMantenimientoProductos frmMantenimientoProductos) {
+		this.frmMantenimientoProductos= frmMantenimientoProductos;
+		
+	}
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnGuardar) {
+			actionPerformedBtnGuardar(e);
+		}
+		if (e.getSource() == btnCancelar) {
+			actionPerformedBtnCancelar(e);
+		}
+	}
+	protected void actionPerformedBtnCancelar(ActionEvent e) {
+		this.dispose();
+	}
+	protected void actionPerformedBtnGuardar(ActionEvent e) {
+		guardarRegistro();
+	}
+
+	private void guardarRegistro() {
+		String nomb;
+		int stock, categoria, proveedor;
+		double precio;
+
+		// entradas
+		nomb = getNombre();
+		stock = getStock();
+		precio = getPrecio();
+		categoria = getCategoria();
+		proveedor = getProveedor();
+
+		// validar
+		if (nomb == null || stock == -1 || precio == -1 || categoria == -1 || proveedor == -1 ) {
+			return;
+		} else {
+
+			Productos p = new Productos();
+
+			p.setDescripcion(nomb);
+			p.setStock(stock);
+			p.setPrecio(precio);
+			p.setCategoriaProducto((CategoriaProducto) cboTipoUsuario.getSelectedItem());
+			p.setProveedor((Proveedor) cboEstado.getSelectedItem());
+
+			// Llamar al proceso del resgistro
+			int res = gProd.registrarProducto(p);
+			// Validar el resultado del proceso de registro
+			if (res == 0) {
+				Alertas.mensajeError("Error en el registro");
+			} else {
+				Alertas.mensajeExitoso("Producto registrado");
+				
+
+			}
+			
+		}
+		this.frmMantenimientoProductos.listar();
+		this.dispose();
+		return;
+		
+	}
+
+
+	private int getCategoria() {
+		if(cboTipoUsuario.getSelectedIndex() == 0) {
+			Alertas.mensajeError("Seleccione el proveedor");
+		}
+		return cboTipoUsuario.getSelectedIndex();
+	}
+
+	private int getProveedor() {
+		if(cboEstado.getSelectedIndex() == 0) {
+			Alertas.mensajeError("Seleccione el proveedor");
+		}
+		return cboEstado.getSelectedIndex();
+	}
+	
+
+	private double getPrecio() {
+		double pre = -1;
+		// campo vacío
+		if (txtPrecio.getText().trim().length() == 0) {
+			Alertas.mensajeError("Ingresar el precio del producto");
+			txtPrecio.setText("");
+			txtPrecio.requestFocus();
+		} else if(txtPrecio.getText().trim().matches(Validaciones.PRECIO_PRODUCTO)){
+			pre = txtPrecio.getText().trim().length();
+		}else {
+			Alertas.mensajeError("Formato incorrecto, ingresar el precio en formato con 2 decimales");
+			txtPrecio.setText("");
+			txtPrecio.requestFocus();
+		}
+		return pre;
+	}
+
+	private int getStock() {
+		int stock = -1;
+		// campo vacío
+		if (txtPassword.getText().trim().length() == 0) {
+			Alertas.mensajeError("Ingresar la cantidad del producto");
+			txtPassword.setText("");
+			txtPassword.requestFocus();
+		} else if (txtPassword.getText().trim().matches(Validaciones.CANTIDAD_PRODUCTO)) {
+			stock = txtPassword.getText().trim().length();
+		}else {
+			Alertas.mensajeError("Formato incorrecto, ingresar solo valores numericos");
+			txtPassword.setText("");
+			txtPassword.requestFocus();
+		}
+			return stock;
+	}
+
+	private String getNombre() {
+		String nomb = null;
+		if(txtNombreUsuario.getText().length() == 0 ) {
+			Alertas.mensajeError("Ingresar la descripción del producto");
+			txtNombreUsuario.requestFocus();
+		}else if(txtNombreUsuario.getText().trim().matches(Validaciones.NOMBRE_PRODUCTO)) {
+			nomb = txtNombreUsuario.getText().trim();
+			}else {
+				Alertas.mensajeError("Formato incorrecto, ingresar de 4 a 35 dígitos");
+				txtNombreUsuario.setText("");
+				txtNombreUsuario.requestFocus();
+			}
+		return nomb;
+	}
+}

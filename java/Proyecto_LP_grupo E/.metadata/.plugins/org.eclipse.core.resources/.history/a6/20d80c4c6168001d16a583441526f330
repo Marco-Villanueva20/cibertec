@@ -1,0 +1,11 @@
+package Entidad;
+
+public class Usuario {
+	
+	private int codigo;
+	private String nombre;
+	private String pass;
+	private TipoUsuario tipousuario;
+	 
+
+}

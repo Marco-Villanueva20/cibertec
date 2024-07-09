@@ -1,0 +1,119 @@
+package Vista;
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
+
+import Entidad.Proveedor;
+import Mantenimiento.GestionProveedorDAO;
+import utils.Alertas;
+
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+
+public class frmMantenimientoUsuarios extends JInternalFrame implements ActionListener {
+	private ArrayList<Proveedor> listaProveedores = new ArrayList<>();
+	private JButton btnAgregar;
+	private JButton btnEditar;
+	private JButton btnEliminar;
+	private frmPrincipal frmPrincipal;
+	private JTable tblUsuarios;
+	private JScrollPane scrollPane;
+	
+	DefaultTableModel model = new DefaultTableModel();
+	GestionProveedorDAO Gprov = new GestionProveedorDAO();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frmMantenimientoUsuarios frame = new frmMantenimientoUsuarios();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public frmMantenimientoUsuarios() {
+		setClosable(true);
+		setTitle("Mantenimiento usuarios");
+		setBounds(100, 100, 700, 410);
+		getContentPane().setLayout(null);
+		
+		btnAgregar = new JButton("Agregar");
+		btnAgregar.addActionListener(this);
+		btnAgregar.setBounds(282, 48, 113, 34);
+		getContentPane().add(btnAgregar);
+		
+		btnEditar = new JButton("Editar");
+		btnEditar.addActionListener(this);
+		btnEditar.setBounds(421, 48, 113, 34);
+		getContentPane().add(btnEditar);
+		
+		btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(this);
+		btnEliminar.setBounds(561, 48, 113, 34);
+		getContentPane().add(btnEliminar);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 92, 664, 277);
+		getContentPane().add(scrollPane);
+		
+		tblUsuarios = new JTable();
+		scrollPane.setViewportView(tblUsuarios);
+		model.addColumn("Código");
+		model.addColumn("Razón Social");
+		model.addColumn("RUC");
+		model.addColumn("Direccion");
+		tblUsuarios.setModel(model);
+		
+
+	
+	}
+	
+	
+	void setFrmPrincipal(frmPrincipal frmPrincipal) {
+		this.frmPrincipal = frmPrincipal;
+		
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnEliminar) {
+			actionPerformedBtnEliminar(e);
+		}
+		if (e.getSource() == btnEditar) {
+			actionPerformedBtnEditar(e);
+		}
+		if (e.getSource() == btnAgregar) {
+			actionPerformedBtnAgregar(e);
+		}
+	}
+	protected void actionPerformedBtnAgregar(ActionEvent e) {
+		
+		
+	}
+	
+	protected void actionPerformedBtnEditar(ActionEvent e) {
+		
+	}
+	
+	protected void actionPerformedBtnEliminar(ActionEvent e) {
+		
+	}
+
+}

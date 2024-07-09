@@ -1,0 +1,146 @@
+package Vista;
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
+
+import Entidad.Usuarios;
+import Mantenimiento.GestionUsuarios;
+import utils.Alertas;
+
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+
+public class frmMantenimientoUsuarios extends JInternalFrame implements ActionListener {
+	private JButton btnAgregar;
+	private JButton btnEditar;
+	private JButton btnEliminar;
+	private JTable tblUsuarios;
+	private JScrollPane scrollPane;
+	private frmPrincipal frmPrincipal;
+	private ArrayList<Usuarios> listaUsuarios= new ArrayList<>();
+	
+	DefaultTableModel model = new DefaultTableModel();
+	GestionUsuarios gUser = new GestionUsuarios();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frmMantenimientoUsuarios frame = new frmMantenimientoUsuarios();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public frmMantenimientoUsuarios() {
+		setClosable(true);
+		setTitle("Mantenimiento usuarios");
+		setBounds(100, 100, 700, 410);
+		getContentPane().setLayout(null);
+		
+		btnAgregar = new JButton("Agregar");
+		btnAgregar.addActionListener(this);
+		btnAgregar.setBounds(282, 48, 113, 34);
+		getContentPane().add(btnAgregar);
+		
+		btnEditar = new JButton("Editar");
+		btnEditar.addActionListener(this);
+		btnEditar.setBounds(421, 48, 113, 34);
+		getContentPane().add(btnEditar);
+		
+		btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(this);
+		btnEliminar.setBounds(561, 48, 113, 34);
+		getContentPane().add(btnEliminar);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 92, 664, 277);
+		getContentPane().add(scrollPane);
+		
+		tblUsuarios = new JTable();
+		scrollPane.setViewportView(tblUsuarios);
+		model.addColumn("Código");
+		model.addColumn("Nombre de Usuarios");
+		model.addColumn("Contraseña");
+		model.addColumn("Tipo de Usuarios");
+		model.addColumn("Estados");
+		tblUsuarios.setModel(model);
+		
+		listar();
+
+	
+	}
+	
+
+	void setFrmPrincipal(frmPrincipal frmPrincipal) {
+		this.frmPrincipal = frmPrincipal;
+
+	}
+	
+	public void listar() {
+		listaUsuarios = gUser.listarUsuario();
+		cargarDataUsuarios(listaUsuarios);
+		 
+	}
+	
+	void cargarDataUsuarios(ArrayList<Usuarios> list) {
+		model.setRowCount(0);
+			
+		for (Usuarios u : list) {
+			Object fila[] = {u.getCodigo(),u.getNombre(),u.getPass(),u.getTipousuario(),u.getEstado()};
+
+			model.addRow(fila);
+		}
+
+	
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnEliminar) {
+			actionPerformedBtnEliminar(e);
+		}
+		if (e.getSource() == btnEditar) {
+			actionPerformedBtnEditar(e);
+		}
+		if (e.getSource() == btnAgregar) {
+			actionPerformedBtnAgregar(e);
+		}
+	}
+	protected void actionPerformedBtnAgregar(ActionEvent e) {
+		frmAgregarUsuario frmUsuario = new frmAgregarUsuario();
+		frmUsuario.setFrmMantenimientoUsuarios(this);
+		frmPrincipal.getEscritorio().add(frmUsuario);
+				
+		Dimension desktopSize = frmPrincipal.getEscritorio().getSize();
+		Dimension FrameSize = frmUsuario.getSize();
+		frmUsuario.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+		frmUsuario.setVisible(true);
+		
+	}
+	
+	protected void actionPerformedBtnEditar(ActionEvent e) {
+		
+	}
+	
+	protected void actionPerformedBtnEliminar(ActionEvent e) {
+		
+	}
+
+}

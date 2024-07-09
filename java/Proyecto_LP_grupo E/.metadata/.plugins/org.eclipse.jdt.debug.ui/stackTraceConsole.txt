@@ -1,0 +1,3 @@
+this.frmProveedores.Gprov.ListarProveedor();
+			this.dispose();
+			return;
