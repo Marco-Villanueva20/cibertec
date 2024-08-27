@@ -1,10 +1,11 @@
+/Java/.metadata
 /Java/*/.metadata
 /Java/*/.settings
 /Java/*/.classpath
 /Java/*/.project
 /Java/*/bin
 
-
+#KOTLIN
 # Ignorar la configuración del IDE a nivel de la carpeta principal de Kotlin
 /Kotlin/.idea/
 
