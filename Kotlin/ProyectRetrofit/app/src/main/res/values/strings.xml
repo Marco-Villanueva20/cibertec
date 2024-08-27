@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RecyclerApplication</string>
+    <string name="lbl_title_listado_docentes">Listado de Docentes</string>
+    <string name="lbl_nombre_legend">Nombre:</string>
+    <string name="lbl_id_legend">ID:</string>
+    <string name="lbl_apellido_legend">Apellido:</string>
+    <string name="lbl_tipo_docente_legend">Tipo de Docente:</string>
+    <string name="lbl_nombre_completo">Nombre Completo</string>
+    <string name="lbl_title_agregar_nuevo_docente">Agregar nuevo Docente</string>
+    <string name="lbl_title_detalle_docente">Detalle Docente</string>
+    <string name="lbl_nombre_docente">Nombre Docente: </string>
+    <string name="lbl_apellido_docente">Apellido Docente: </string>
+    <string name="lbl_tipo_docente">Tipo Docente: </string>
+    <string name="btn_guardar_add_docente">Guardar</string>
+    <string name="btn_cancelar_add_docente">Cancelar</string>
+    <string name="text_help_acelerometro">Acelerometro</string>
+
+</resources>

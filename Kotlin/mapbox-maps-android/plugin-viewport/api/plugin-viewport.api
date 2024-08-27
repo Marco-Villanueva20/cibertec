@@ -1,0 +1,5 @@
+public final class com/mapbox/maps/plugin/viewport/ViewportUtils {
+	public static final synthetic fun createViewportPlugin ()Lcom/mapbox/maps/plugin/viewport/ViewportPlugin;
+	public static final fun getViewport (Lcom/mapbox/maps/plugin/delegates/MapPluginProviderDelegate;)Lcom/mapbox/maps/plugin/viewport/ViewportPlugin;
+}
+

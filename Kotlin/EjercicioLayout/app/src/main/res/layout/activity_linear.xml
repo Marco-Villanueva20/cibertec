@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LinearActivity">
+
+    <TextView
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+
+        android:id="@+id/lblTitulo"
+        android:text="@string/title_linear"
+
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-black"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/lblNombreLegend"
+            android:text="@string/nombres"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20sp"
+            android:layout_weight="0.5"
+            android:gravity="end"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/lblNombre"
+            android:text="Marco Antonio"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20sp"
+            android:layout_weight="0.5"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblApellidopaternoLegend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="end"
+            android:textSize="20sp"
+            android:layout_marginTop="20sp"
+            android:text="@string/apellidoPaterno"
+            />
+        <TextView
+            android:id="@+id/lblApellidoPaterno"
+            android:text="Villanueva"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20sp"
+            android:layout_weight="0.5"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblApellidoMaternoLegend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="20sp"
+            android:text="@string/apellidoMaterno"
+            android:layout_weight="0.5"
+            android:gravity="end"
+            />
+        <TextView
+            android:id="@+id/lblApellidoMaterno"
+            android:text="Soto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20sp"
+            android:layout_weight="0.5"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

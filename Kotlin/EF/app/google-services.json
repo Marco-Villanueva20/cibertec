@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "783308387268",
+    "project_id": "ef-alexandra-elizabeth",
+    "storage_bucket": "ef-alexandra-elizabeth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783308387268:android:16c15b951378c0eb2f6a91",
+        "android_client_info": {
+          "package_name": "pe.cibertec.ef"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGHuu2N08ZvHNn0Eiuufu3s43IaahUJfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,16 @@
+public final class com/mapbox/maps/plugin/logo/LogoUtils {
+	public static final synthetic fun createLogoPlugin ()Lcom/mapbox/maps/plugin/logo/LogoPlugin;
+	public static final fun getLogo (Lcom/mapbox/maps/plugin/delegates/MapPluginProviderDelegate;)Lcom/mapbox/maps/plugin/logo/LogoPlugin;
+}
+
+public final class com/mapbox/maps/plugin/logo/LogoViewImpl : androidx/appcompat/widget/AppCompatImageView, com/mapbox/maps/plugin/logo/LogoView {
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public fun getLogoEnabled ()Z
+	public fun getLogoGravity ()I
+	public fun setLogoEnabled (Z)V
+	public fun setLogoGravity (I)V
+	public fun setLogoMargins (IIII)V
+}
+

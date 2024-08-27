@@ -1,0 +1,32 @@
+public final class com/mapbox/maps/plugin/scalebar/LocaleUnitResolver {
+	public static final field INSTANCE Lcom/mapbox/maps/plugin/scalebar/LocaleUnitResolver;
+	public final fun isMetricSystem ()Z
+}
+
+public final class com/mapbox/maps/plugin/scalebar/ScaleBarImpl : android/view/View, com/mapbox/maps/plugin/scalebar/ScaleBar {
+	public static final field Companion Lcom/mapbox/maps/plugin/scalebar/ScaleBarImpl$Companion;
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public fun getDistancePerPixel ()F
+	public fun getEnable ()Z
+	public fun getMapViewWidth ()F
+	public fun getPixelRatio ()F
+	public fun getSettings ()Lcom/mapbox/maps/plugin/scalebar/generated/ScaleBarSettings;
+	public fun getUseContinuousRendering ()Z
+	public fun setDistancePerPixel (F)V
+	public fun setEnable (Z)V
+	public fun setMapViewWidth (F)V
+	public fun setPixelRatio (F)V
+	public fun setSettings (Lcom/mapbox/maps/plugin/scalebar/generated/ScaleBarSettings;)V
+	public fun setUseContinuousRendering (Z)V
+}
+
+public final class com/mapbox/maps/plugin/scalebar/ScaleBarImpl$Companion {
+}
+
+public final class com/mapbox/maps/plugin/scalebar/ScaleBarUtils {
+	public static final synthetic fun createScaleBarPlugin ()Lcom/mapbox/maps/plugin/scalebar/ScaleBarPlugin;
+	public static final fun getScaleBar (Lcom/mapbox/maps/plugin/delegates/MapPluginProviderDelegate;)Lcom/mapbox/maps/plugin/scalebar/ScaleBarPlugin;
+}
+

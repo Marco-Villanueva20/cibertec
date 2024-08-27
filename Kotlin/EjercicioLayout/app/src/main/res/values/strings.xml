@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Ejercicio con Layout</string>
+    <string name="title_linear">Titulo Linear</string>
+    <string name="title_relative">Titulo Relativo</string>
+    <string name="title_constraint">Titulo Constraint</string>
+
+
+    <string name="nombres">Nombres: </string>
+
+    <string name="apellidoPaterno">Apellido Paterno: </string>
+    <string name="apellidoMaterno">Apellido Materno: </string>
+</resources>

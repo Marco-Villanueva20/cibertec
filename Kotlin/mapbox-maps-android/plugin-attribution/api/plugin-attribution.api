@@ -1,0 +1,24 @@
+public final class com/mapbox/maps/plugin/attribution/AttributionDialogManagerImpl : android/content/DialogInterface$OnClickListener, com/mapbox/maps/plugin/attribution/AttributionDialogManager {
+	public fun <init> (Landroid/content/Context;)V
+	public fun onClick (Landroid/content/DialogInterface;I)V
+	public fun onStop ()V
+	public fun showAttribution (Lcom/mapbox/maps/plugin/delegates/MapAttributionDelegate;)V
+}
+
+public final class com/mapbox/maps/plugin/attribution/AttributionUtils {
+	public static final synthetic fun createAttributionPlugin ()Lcom/mapbox/maps/plugin/attribution/AttributionPlugin;
+	public static final fun getAttribution (Lcom/mapbox/maps/plugin/delegates/MapPluginProviderDelegate;)Lcom/mapbox/maps/plugin/attribution/AttributionPlugin;
+}
+
+public final class com/mapbox/maps/plugin/attribution/AttributionViewImpl : androidx/appcompat/widget/AppCompatImageView, com/mapbox/maps/plugin/attribution/AttributionView {
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public synthetic fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun setAttributionMargins (IIII)V
+	public fun setEnable (Z)V
+	public fun setGravity (I)V
+	public fun setIconColor (I)V
+	public fun setViewOnClickListener (Landroid/view/View$OnClickListener;)V
+}
+

@@ -1,0 +1,5 @@
+public final class com/mapbox/maps/plugin/overlay/MapOverlayUtils {
+	public static final synthetic fun createOverlayPlugin ()Lcom/mapbox/maps/plugin/overlay/MapOverlayPlugin;
+	public static final fun getOverlay (Lcom/mapbox/maps/plugin/delegates/MapPluginProviderDelegate;)Lcom/mapbox/maps/plugin/overlay/MapOverlayPlugin;
+}
+

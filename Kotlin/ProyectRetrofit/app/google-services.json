@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "242612416610",
+    "project_id": "proyectorecycler-dami",
+    "storage_bucket": "proyectorecycler-dami.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242612416610:android:0bc4788fb7c7e9c0bee13b",
+        "android_client_info": {
+          "package_name": "pe.cibertec.dami.recyclerapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0SQKCdw66DSmDKEUNUPuPax3tGaiScC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

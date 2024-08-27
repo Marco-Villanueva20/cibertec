@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Resolucion Examen CL2</string>
+    <string name="title_listado_carros">Listado de Carros</string>
+    <string name="marca_carros_legend">Marca</string>
+    <string name="modelo_carros_legend">Modelo</string>
+    <string name="lbl_title_agregar_nuevo_carro">Agregar Carro</string>
+    <string name="lbl_id_car">Id</string>
+    <string name="lbl_marca_car">Marca</string>
+    <string name="lbl_modelo_car">Modelo</string>
+    <string name="lbl_anio_car">Año</string>
+    <string name="lbl_asientos_car">Asientos</string>
+    <string name="lbl_color_car">Color</string>
+    <string name="btn_guardar_add_car">Guardar</string>
+    <string name="btn_cancelar_add_car">Cancelar</string>
+    <string name="lbl_title_detalle_carro">Detalle Carro</string>
+</resources>

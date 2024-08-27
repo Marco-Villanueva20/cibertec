@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsCarActivity">
+
+    <TextView
+        android:id="@+id/lblTitleDetailCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:gravity="center"
+        android:text="@string/lbl_title_detalle_carro"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/lyMarcaCarDt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblTitleDetailCar">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/lbl_marca_car" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtMarcaCarDt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:enabled="false"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:hint="@string/lbl_marca_car" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyModeloCarDt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyMarcaCarDt">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/lbl_modelo_car" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtModeloCarDt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:maxLines="2"
+            android:hint="@string/lbl_modelo_car" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyAnioCarDt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyModeloCarDt">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/lbl_anio_car" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtAnioCarDt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:maxLines="1"
+            android:hint="@string/lbl_anio_car" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyAsientosCarDt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyAnioCarDt">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/lbl_asientos_car" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtAsientosCarDt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:maxLines="1"
+            android:hint="@string/lbl_asientos_car" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyColorCarDt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyAsientosCarDt">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/lbl_color_car" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtColorCarDt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:maxLines="2"
+            android:hint="@string/lbl_color_car" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lyImagenCarroDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyColorCarDt">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/lbl_iv_imagen_carror" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtImagenCarroDet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:maxLines="4"
+            android:hint="@string/lbl_iv_imagen_carror" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyActionsCarDt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyImagenCarroDetail"
+        android:visibility="invisible"
+        >
+
+        <Button
+            android:id="@+id/btnSaveCarDt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp"
+            android:layout_weight="0.5"
+            android:backgroundTint="@color/confirm"
+            android:text="@string/btn_guardar_add_car"
+            />
+
+
+        <Button
+            android:id="@+id/btnCancelCarDt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp"
+            android:layout_weight="0.5"
+            android:backgroundTint="@color/cancel"
+            android:text="@string/btn_cancelar_add_car"
+            />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnDeleteDt"
+        android:layout_margin="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_input_delete"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnEditDt"
+        android:layout_margin="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btnDeleteDt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

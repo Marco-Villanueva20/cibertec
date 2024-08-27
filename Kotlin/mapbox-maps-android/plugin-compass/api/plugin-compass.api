@@ -1,0 +1,24 @@
+public final class com/mapbox/maps/plugin/compass/CompassUtils {
+	public static final synthetic fun createCompassPlugin ()Lcom/mapbox/maps/plugin/compass/CompassPlugin;
+	public static final fun getCompass (Lcom/mapbox/maps/plugin/delegates/MapPluginProviderDelegate;)Lcom/mapbox/maps/plugin/compass/CompassPlugin;
+}
+
+public class com/mapbox/maps/plugin/compass/CompassViewImpl : androidx/appcompat/widget/AppCompatImageView, com/mapbox/maps/plugin/compass/CompassView {
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public synthetic fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getCompassGravity ()I
+	public fun getCompassImage ()Landroid/graphics/drawable/Drawable;
+	public fun getCompassRotation ()F
+	public fun isCompassEnabled ()Z
+	public fun isCompassVisible ()Z
+	public fun setCompassAlpha (F)V
+	public fun setCompassEnabled (Z)V
+	public fun setCompassGravity (I)V
+	public fun setCompassImage (Landroid/graphics/drawable/Drawable;)V
+	public fun setCompassMargins (IIII)V
+	public fun setCompassRotation (F)V
+	public fun setCompassVisible (Z)V
+}
+

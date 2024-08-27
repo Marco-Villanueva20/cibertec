@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:hint="@string/lbl_nombre_completo"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:id="@+id/nombreCompleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imgDocente"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreCompleto"
+        />
+
+    <TextView
+        android:layout_marginTop="10sp"
+        android:id="@+id/lblIdLegend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_id_legend"
+        app:layout_constraintStart_toEndOf="@+id/imgDocente"
+        app:layout_constraintTop_toBottomOf="@id/nombreCompleto"
+        />
+
+    <TextView
+        android:layout_marginTop="10sp"
+        android:id="@+id/lblId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/lbl_id_legend"
+        android:layout_marginStart="20sp"
+        app:layout_constraintStart_toEndOf="@id/lblIdLegend"
+        app:layout_constraintTop_toBottomOf="@id/nombreCompleto"
+        />
+
+    <TextView
+        android:layout_marginTop="10sp"
+        android:id="@+id/lblNombreLegend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_nombre_legend"
+        app:layout_constraintStart_toEndOf="@+id/imgDocente"
+        app:layout_constraintTop_toBottomOf="@id/lblIdLegend"
+        />
+
+    <TextView
+        android:id="@+id/lblNombreDocente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/lbl_nombre_legend"
+        android:layout_marginStart="20sp"
+        app:layout_constraintStart_toEndOf="@id/lblNombreLegend"
+        app:layout_constraintTop_toTopOf="@id/lblNombreLegend"
+        />
+
+    <TextView
+        android:layout_marginTop="10sp"
+        android:id="@+id/lblApellidoLegend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_apellido_legend"
+        app:layout_constraintStart_toEndOf="@+id/imgDocente"
+        app:layout_constraintTop_toBottomOf="@id/lblNombreLegend"
+        />
+
+    <TextView
+        android:id="@+id/lblApellidoDocente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/lbl_apellido_legend"
+        android:layout_marginStart="20sp"
+        app:layout_constraintStart_toEndOf="@id/lblApellidoLegend"
+        app:layout_constraintTop_toTopOf="@id/lblApellidoLegend"
+        />
+
+    <TextView
+        android:layout_marginTop="10sp"
+        android:id="@+id/lblTipoDocenteLegend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_tipo_docente_legend"
+        app:layout_constraintStart_toEndOf="@+id/imgDocente"
+        app:layout_constraintTop_toBottomOf="@id/lblApellidoLegend"
+        />
+
+    <TextView
+        android:id="@+id/lblTipoDocente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/lbl_tipo_docente_legend"
+        android:layout_marginStart="20sp"
+        app:layout_constraintStart_toEndOf="@id/lblTipoDocenteLegend"
+        app:layout_constraintTop_toTopOf="@id/lblTipoDocenteLegend"
+        />
+
+    <View
+        android:layout_marginTop="5sp"
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@id/lblTipoDocenteLegend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

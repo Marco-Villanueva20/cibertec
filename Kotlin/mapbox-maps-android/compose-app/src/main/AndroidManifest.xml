@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mapbox.maps.compose.testapp">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".MapboxApplication"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MapboxMapCompose">
+        <activity
+            android:name=".ExampleOverviewActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".examples.basic.SimpleMapActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_simple_map"
+            android:exported="true"
+            android:label="@string/activity_simple_map"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_basic" />
+        </activity>
+        <activity
+            android:name=".examples.basic.DebugModeActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_debug_mode"
+            android:exported="true"
+            android:label="@string/activity_debug_mode"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_basic" />
+        </activity>
+        <activity
+            android:name=".examples.annotation.CircleAnnotationActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_circle_annotation"
+            android:exported="true"
+            android:label="@string/activity_circle_annotation"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_annotation" />
+        </activity>
+        <activity
+            android:name=".examples.annotation.PointAnnotationClusterActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_point_annotation_cluster"
+            android:exported="true"
+            android:label="@string/activity_point_annotation_cluster"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_annotation" />
+        </activity>
+        <activity
+            android:name=".examples.annotation.PolygonAnnotationActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_polygon_annotation"
+            android:exported="true"
+            android:label="@string/activity_polygon_annotation"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_annotation" />
+        </activity>
+        <activity
+            android:name=".examples.annotation.PolylineAnnotationActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_polyline_annotation"
+            android:exported="true"
+            android:label="@string/activity_polyline_annotation"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_annotation" />
+        </activity>
+        <activity
+            android:name=".examples.annotation.ViewAnnotationActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_view_annotation"
+            android:exported="true"
+            android:label="@string/activity_view_annotation"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_annotation" />
+        </activity>
+        <activity
+            android:name=".examples.animation.MapViewportAnimationsActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_map_viewport_animation"
+            android:exported="true"
+            android:label="@string/activity_map_viewport_animation"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_camera" />
+        </activity>
+        <activity
+            android:name=".examples.basic.MultiDisplayActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_multiple_display"
+            android:exported="true"
+            android:label="@string/activity_multiple_display"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_basic" />
+        </activity>
+        <activity
+            android:name=".examples.ornaments.OrnamentCustomisationActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_ornaments_customisation"
+            android:exported="true"
+            android:label="@string/activity_ornaments_customisation"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_ornaments" />
+        </activity>
+        <activity
+            android:name=".examples.location.LocationComponentActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_location_location_component"
+            android:exported="true"
+            android:label="@string/activity_location_location_component"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_location" />
+        </activity>
+        <activity
+            android:name=".examples.style.StyleCompositionActivity"
+            android:description="@string/description_style_composition"
+            android:exported="true"
+            android:label="@string/activity_style_composition"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_styles" />
+        </activity>
+        <activity
+            android:name=".examples.location.NavigationSimulationActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_navigation_simulation"
+            android:exported="true"
+            android:label="@string/activity_navigation_simulation"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_location" />
+        </activity>
+        <activity
+            android:name=".examples.basic.MultiMapActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:description="@string/description_multi_map"
+            android:exported="true"
+            android:label="@string/activity_multi_map"
+            android:parentActivityName=".ExampleOverviewActivity">
+            <meta-data
+                android:name="@string/category"
+                android:value="@string/category_basic" />
+        </activity>
+    </application>
+
+</manifest>

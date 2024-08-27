@@ -1,0 +1,5 @@
+public final class com/mapbox/maps/plugin/lifecycle/LifecycleUtils {
+	public static final synthetic fun createLifecyclePlugin ()Lcom/mapbox/maps/plugin/lifecycle/MapboxLifecyclePlugin;
+	public static final fun getLifecycle (Lcom/mapbox/maps/plugin/delegates/MapPluginProviderDelegate;)Lcom/mapbox/maps/plugin/lifecycle/MapboxLifecyclePlugin;
+}
+

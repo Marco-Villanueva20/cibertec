@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    card_view:cardBackgroundColor="#227C90"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="6dp"
+    card_view:contentPadding="4dp"
+    android:layout_margin="12dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/ivProducto"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/facebook"
+            android:contentDescription="@string/img_info"
+            android:layout_marginBottom="8dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNombreProducto"
+            android:layout_toEndOf="@id/ivProducto"
+            android:layout_alignTop="@id/ivProducto"
+            android:text="@string/nombre_del_producto"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPrecioProducto"
+            android:layout_below="@id/tvNombreProducto"
+            android:layout_toEndOf="@id/ivProducto"
+            android:text="@string/precio_del_producto"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="32dp"
+
+            />
+        <LinearLayout
+            android:id="@+id/lyControlCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:background="@drawable/forma_rectangulo"
+            android:orientation="horizontal"
+            android:layout_below="@id/ivProducto"
+            android:layout_alignParentStart="true"
+
+            >
+            <Button
+                android:id="@+id/btnDisminuir"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/boton_redondo"
+                android:text="@string/btn_disminuir"
+                android:padding="1dp"
+                />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etCantidad"
+                android:inputType="number"
+                android:hint="@string/valor_por_defecto"
+                android:text="@string/valor_por_defecto"
+                android:gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:autofillHints="1" />
+
+            <Button
+                android:id="@+id/btnAumentar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="@string/btn_aumentar"
+                android:padding="1dp"
+                android:background="@drawable/boton_redondo"
+                />
+
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAddCarrito"
+            android:background="@drawable/forma_rectangulo"
+            android:layout_below="@id/tvPrecioProducto"
+            android:layout_toEndOf="@id/lyControlCantidad"
+            android:text="@string/a_adir_al_carrito"
+            android:layout_marginStart="16dp"
+            />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
