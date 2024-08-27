@@ -1,3 +1,4 @@
+#JAVA
 /Java/.metadata
 /Java/*/.metadata
 /Java/*/.settings
@@ -30,3 +31,61 @@
 # Ignorar archivos de configuración del IDE específicos de IntelliJ/Android Studio
 *.iml
 
+
+#SPRING BOOT
+
+/Spring Boot/.metadata
+# Ignorar directorios y archivos específicos dentro de /Spring Boot
+
+# Ignorar todo en /Spring Boot/ y subdirectorios
+/Spring Boot/*/.metadata/
+/Spring Boot/*/.settings/
+/Spring Boot/*/.idea/
+/Spring Boot/*/*.iml
+
+# Ignorar directorios generados por Maven en cualquier subdirectorio
+/Spring Boot/*/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Ignorar directorios generados por Gradle en cualquier subdirectorio
+/Spring Boot/*/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Archivos y directorios comunes generados por herramientas
+/Spring Boot/*/.apt_generated
+/Spring Boot/*/.classpath
+/Spring Boot/*/.factorypath
+/Spring Boot/*/.project
+/Spring Boot/*/.springBeans
+/Spring Boot/*/.sts4-cache
+
+# Archivos y directorios generados por IntelliJ IDEA
+/Spring Boot/*/.idea/
+/Spring Boot/*/*.iws
+/Spring Boot/*/*.iml
+/Spring Boot/*/*.ipr
+
+# Archivos y directorios generados por NetBeans
+/Spring Boot/*/nbproject/private/
+/Spring Boot/*/nbbuild/
+/Spring Boot/*/dist/
+/Spring Boot/*/nbdist/
+/Spring Boot/*/.nb-gradle/
+/Spring Boot/*/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Archivos y directorios generados por VS Code
+/Spring Boot/*/.vscode/
+
+# Archivos temporales comunes
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Archivos de ayuda
+HELP.md
