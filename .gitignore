@@ -1,0 +1,31 @@
+/Java/*/.metadata
+/Java/*/.settings
+/Java/*/.classpath
+/Java/*/.project
+/Java/*/bin
+
+
+# Ignorar la configuración del IDE a nivel de la carpeta principal de Kotlin
+/Kotlin/.idea/
+
+# Ignorar la configuración del IDE en subdirectorios de proyectos dentro de Kotlin
+/Kotlin/*/.idea/
+
+# Ignorar cachés de Gradle en subdirectorios de proyectos dentro de Kotlin
+/Kotlin/*/.gradle/
+
+# Ignorar archivos de configuración local específica del entorno en subdirectorios de proyectos dentro de Kotlin
+/Kotlin/*/local.properties
+
+# Ignorar el directorio build generado por la construcción en subdirectorios de proyectos dentro de Kotlin
+/Kotlin/*/app/build/
+
+# Ignorar archivos generados y temporales comunes
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Ignorar archivos de configuración del IDE específicos de IntelliJ/Android Studio
+*.iml
+
